@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def helloView(request):
-    return HttpResponse("<h1>정답입니다!</h1>")
+    return HttpResponse("<h1>Hola! :)</h1>")
