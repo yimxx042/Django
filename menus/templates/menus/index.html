@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>코스토랑</title>
+    <title>Costaurant</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href={% static 'menus/css/styles.css' %}> <!-- static css file-->
     <link rel="stylesheet" type="text/css"
@@ -29,11 +29,11 @@
             </div>
             <div class="food_container">
                 <div class="food">
-                  <img src={% static "menus/images/chicken.jpg" %}/> <!-- static chicken image.-->
+                  <a href="/menus/food/"><img src={% static "menus/images/chicken.jpg" %}/> </a> <!-- static chicken image.-->
                   <div class="info">
                     <h3>CHICKEN</h3>
                     <p>The most popular chicken in the world</p>
-                    <a href="#">See Menu</a>
+                    <a href="food/chicken">See Menu</a>
                 </div>
            </div>
        </div>
