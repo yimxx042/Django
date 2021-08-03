@@ -1,0 +1,49 @@
+<!-- load static -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>코스토랑</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={% static 'menus/css/styles.css' %}> <!-- static css file-->
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body> 
+    <div id="header">
+        <div class="container">
+            <div class="nav">
+                <a href="index.html"><img src={% static "menus/images/logo-color.svg" %}></a> <!-- static logo.-->
+            </div>
+            <div class="header_txt">
+                <p>Fresh<b>K-Foods</b>Here</p>
+                <h1><img src={% static "menus/images/header-txt.svg" %} style="width=330; height=89;"></h1> <!-- static header image-->
+            </div>
+        </div>
+    </div>
+    <div id="content">
+       <div class="container">
+            <div class="content_txt">
+                <h2>Today`s Menu</h2>
+                <p class="date-text"> July 16, 2021 </p>
+            </div>
+            <div class="food_container">
+                <div class="food">
+                  <img src={% static "menus/images/chicken.jpg" %}/> <!-- static chicken image.-->
+                  <div class="info">
+                    <h3>CHICKEN</h3>
+                    <p>The most popular chicken in the world</p>
+                    <a href="#">See Menu</a>
+                </div>
+           </div>
+       </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="footer">
+                <img src={% static "menus/images/logo-gray.svg" %}> <!-- static menus image-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

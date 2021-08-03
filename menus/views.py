@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h1>코스토랑 오픈!</h1>")
+    return render(request, 'menus/index.html')
