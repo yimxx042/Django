@@ -10,5 +10,10 @@ def index(request):
 
     
 def food_detail(request, food):  #food paramenter is ~/foods/menu/food < this part
-    context = {"name":food}
+    context = dict() #empty dictionary
+    if food == "chicken":
+        context['name'] = "chicken"
+        context['description'] = 'hot k-pop style checken!'
+        context['price'] = 10
+        context['img_path'] = 'foods/images/chicken.jpg'
     return render(request, 'foods/detail.html', context=context)
