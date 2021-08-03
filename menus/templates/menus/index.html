@@ -28,14 +28,17 @@
                 <p class="date-text"> {{today}} </p>
             </div>
             <div class="food_container">
-                <div class="food">
-                  <a href="/menus/food/"><img src={% static "menus/images/chicken.jpg" %}/> </a> <!-- static chicken image.-->
-                  <div class="info">
-                    <h3>CHICKEN</h3>
-                    <p>The most popular chicken in the world</p>
-                    <a href="food/chicken">See Menu</a>
-                </div>
-           </div>
+                {% for menu in menus %}
+                    <div class="food">
+                        <img src={%get_static_prefix%}{{menu.img_path}}>
+                        <div class="info">
+                            <h3>{{menu.name}}</h3>
+                            <p>{{menu.description}}</p>
+                            <a href="food/{{menu.id}}">SEE MENU</a>
+                        </div>
+                        </div>
+                {% endfor %}
+</div>
        </div>
     </div>
     <div id="footer">

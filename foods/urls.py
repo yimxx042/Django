@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('index/', views.index),
-    path('menu/<str:food>', views.food_detail) #Set Dynamic URL by using String #menu/chicken > chicken will be replaced to food
+    path('menu/', views.index),
+    path('menu/<int:pk>', views.food_detail) #set dynamic URL
 ]
 

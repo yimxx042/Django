@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('index/', views.index),
-    path('food/<str:menu>/', views.detail)
+    path('', views.index),
+    path('food/<int:pk>/', views.detail)
 ]

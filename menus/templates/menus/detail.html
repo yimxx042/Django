@@ -23,16 +23,16 @@
                     <img src="{% static 'menus/images/menu-txt.svg' %}">
                 </h2>
                 <div class="menu_img">
-                    <img src="{% static 'menus/images/chicken.jpg' %}">
+                    <img src={%get_static_prefix%}{{menu.img_path}}>
                 </div>
                 <div class="menu_info">
-                    <h3>Chicken</h3>
-                    <h4>Crispy, Juicy chicken with Soy sauce</h4>
-                    <p class="menu-desc">The most popular chicken in the world</p>
-                    <p class="price">&#8361;$10</p>
+                    <h3>{{menu.name}}</h3>
+                    <h4>{{menu.name_eng}}</h4>
+                    <p class="menu-desc">{{menu.description}}</p>
+                    <p class="price">&#8361;{{menu.price}}</p>
                 </div>
-                <div class="back-main">
-                    <a href="/menus/">Go Back</a> 
+                    <div class="back-main">
+                    <a href="/menus">Go Back</a>
                 </div>
             </div>
         </div>

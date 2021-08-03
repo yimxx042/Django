@@ -1,21 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from foods.models import Menu
 
 # Create your views here.
 def index(request):
-    today = datetime.today().date()  
+    context = dict()
+    today = datetime.today().date()
+    menus = Menu.objects.all()  
     context = {"date":today}
+    context["menus"] = menus
     return render(request, 'foods/index.html', context=context)
 
     
-def food_detail(request, food):  #food paramenter is ~/foods/menu/food < this part
+def food_detail(request, pk): 
     context = dict() #empty dictionary
-    if food == "chicken":
-        context['name'] = "chicken"
-        context['description'] = 'hot k-pop style checken!'
-        context['price'] = 10
-        context['img_path'] = 'foods/images/chicken.jpg'
-    else:
-        raise Http404("no food!") #raise is force to error
+    menu = Menu.objects.get(id=pk)
+    context["menu"] = menu
     return render(request, 'foods/detail.html', context=context)

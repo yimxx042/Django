@@ -6,49 +6,15 @@
 {% endblock date-block %}
 
 {% block food-container %}
-    <div class="food">
-      <img src={% static "foods/images/chicken.jpg" %} width="300px" height="200px"/>
+  {% for menu in menus %}
+  <div class="food">
+      <img src={% get_static_prefix %}{{menu.img_path}} width="300px" height="200px"/>
       <div class="info">
-        <h3>Chicken</h3>
-        <P>K-Style Chicken</p>
-        <a href="/foods/chicken">See Menu</a>
+        <h3>{{menu.name}}</h3>
+        <P>{{menu.description}}</p>
+        <a href="{{menu.id}}"">See Menu</a>
       </div>
     </div>
-    
-    <div class="food">
-      <img src={% static "foods/images/sushi.jpg" %} width="300px" height="200px"/>
-      <div class="info">
-        <h3>Sushi</h3>
-        <P>Today is Sushi day</p>
-        <a href="#">See Menu</a>
-      </div>
-    </div>
-    
-    <div class="food">
-      <img src={% static "foods/images/burger.jpg" %} width="300px" height="200px"/>
-      <div class="info">
-        <h3>Hamburger</h3>
-        <P>K-Style Hamburger!</p>
-        <a href="#">See Menu</a>
-      </div>
-    </div>
-    
-    <div class="food">
-      <img src= {% static "foods/images/bibimbap.jpg" %} width="300px" height="200px"/>
-      <div class="info">
-        <h3>BiBimBop</h3>
-        <P>Feel Diets Today?</p>
-        <a href="#">See Menu</a>
-      </div>
-    </div>
-
-    <div class="food">
-      <img src= {% static "foods/images/steak.PNG" %} width="300px" height="200px"/>
-      <div class="info">
-        <h3>Steak</h3>
-        <P>Yummy American Steak</p>
-        <a href="#">See Menu</a>
-      </div>
-    </div>
-    {% endblock food-container %}
+  {% endfor %}
+{% endblock food-container %}
   
